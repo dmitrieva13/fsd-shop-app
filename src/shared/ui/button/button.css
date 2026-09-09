@@ -1,0 +1,17 @@
+.sharedBtn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+}
+
+.sharedBtn:hover {
+    background-color: var(--focus-color);
+}
+
+.sharedBtn:disabled {
+    background-color: darkgray;
+    cursor: inherit;
+}

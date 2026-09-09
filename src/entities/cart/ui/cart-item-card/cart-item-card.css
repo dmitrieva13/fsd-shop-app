@@ -1,0 +1,55 @@
+.cartItemCard {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    justify-content: space-between;
+    padding: 4px 14px;
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.05), 
+                0 4px 6px -3px rgba(0, 0, 0, 0.08);
+}
+
+.cartItemCard_ImageBlock {
+    width: 80px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.cartItemCard_Image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cartItemCard_InfoBlock {
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.cartItemCard_ActionsBlock {
+    display: flex;
+    flex-direction: row;
+}
+
+.cartItemCard_Left {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.cartItemCard_Right {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.cartItemCard_Total {
+    font-weight: 600;
+}

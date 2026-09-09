@@ -1,0 +1,8 @@
+.catalogPage {
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+    overflow-y: hidden;
+}

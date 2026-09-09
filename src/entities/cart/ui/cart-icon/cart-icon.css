@@ -1,0 +1,19 @@
+.cartIcon {
+    display: flex;
+    color: white;
+    height: max-content;
+}
+
+.cartIconCount {
+    background-color: var(--olive-color);
+    border-radius:15px;
+    padding: 2px;
+    font-size: 12px;
+    height: 24px;
+    min-width: 24px;
+    max-width: fit-content;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
