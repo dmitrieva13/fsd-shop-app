@@ -9,7 +9,7 @@
     git clone https://github.com/dmitrieva13/fsd-shop-app.git
     cd fsd-shop-app
     ```
-2. Установите Node.js с [https://nodejs.org/en/download](официального сайта)
+2. Установите Node.js с [официального сайта](https://nodejs.org/en/download)
 3.  Установите необходимые библиотеки:
     ```bash
     npm install
