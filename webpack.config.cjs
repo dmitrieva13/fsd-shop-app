@@ -53,7 +53,6 @@ module.exports = {
                 ["@babel/preset-react", { "runtime": "automatic" }],
                 "@babel/preset-typescript"
             ],
-            // 3. Вставляем плагин react-refresh внутрь babel-loader только для разработки
             plugins: [
               isDevelopment && require.resolve("react-refresh/babel")
             ].filter(Boolean),
@@ -61,7 +60,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(ts|js)$/, // Только логика, сторы, хелперы
+        test: /\.(ts|js)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -71,7 +70,7 @@ module.exports = {
               ["@babel/preset-react", { "runtime": "automatic" }],
               "@babel/preset-typescript"
             ],
-            plugins: [], // Оставляем пустым
+            plugins: [],
           }
         }
       },
