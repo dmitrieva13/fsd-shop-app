@@ -1,0 +1,14 @@
+.cancelButton {
+    background-image: linear-gradient(to right, var(--gray-color) 50%, var(--dark-gray-color) 50%);
+    background-size: 200% 100%;
+    animation: animateCancelButtonColor 3s ease forwards;
+}
+
+@keyframes animateCancelButtonColor {
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: -100%;
+    }
+}

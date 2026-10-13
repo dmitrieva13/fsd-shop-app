@@ -3,14 +3,26 @@ import { apiGet } from  '@/shared/api';
 import type { CartItem } from './types';
 import type { RootStore } from '@/app/providers/root.store';
 
+interface ICartDependencies {
+    productStore: {
+        getProduct: (id: string) => {
+            id: string,
+            name: string,
+            price: number,
+            countLeft: number,
+            imageUrl: string
+            } | undefined;
+    };
+}
+
 export class CartStore {
     items: CartItem[] = [];
     isLoading: boolean = false;
-    rootStore: RootStore;
+    dependencies: ICartDependencies;
 
-    constructor(rootStore: RootStore) {
-        this.rootStore = rootStore;
-        makeAutoObservable(this, { rootStore: false });
+    constructor(dependencies: ICartDependencies) {
+        this.dependencies = dependencies;
+        makeAutoObservable(this, { dependencies: false });
     }
 
     async fetchCartItems() {
@@ -42,7 +54,7 @@ export class CartStore {
     }
 
     addToCart(productId: string) {
-        const product = this.rootStore.productStore.getProduct(productId);
+        const product = this.dependencies.productStore.getProduct(productId);
         if (!product) {
             throw new Error('no product with such id');
         }
@@ -55,7 +67,7 @@ export class CartStore {
     }
 
     increaseItem(productId: string) {
-        const product = this.rootStore.productStore.getProduct(productId);
+        const product = this.dependencies.productStore.getProduct(productId);
         if (!product) {
             throw new Error('no product with such id');
         }
@@ -64,7 +76,8 @@ export class CartStore {
 
         if (existing) {
             if (existing.count >= existing.product.countLeft) {
-                throw new Error('max number reached');
+                return;
+                // throw new Error('max number reached');
             }
             existing.count += 1;
         } else {
@@ -73,7 +86,7 @@ export class CartStore {
     }
 
     decreaseItem(productId: string) {
-        const product = this.rootStore.productStore.getProduct(productId);
+        const product = this.dependencies.productStore.getProduct(productId);
         if (!product) {
             throw new Error('no product with such id');
         }
@@ -94,6 +107,29 @@ export class CartStore {
 
     removeFromCart(productId: string) {
         this.items = this.items.filter(item => item.product.id !== productId);
+    }
+
+    handleRemove(productId: string) {
+        const existing = this.items.find(item => item.product.id === productId);
+        if (existing) {
+            existing.isCancelling = true;
+            setTimeout(() => {
+                if (existing.isCancelling) {
+                    this.removeFromCart(productId);
+                }
+            }, 3000);
+        } else {
+            throw new Error('no such item in cart');
+        }
+    }
+
+    cancelRemovingFromCart(productId: string) {
+        const existing = this.items.find(item => item.product.id === productId);
+        if (existing) {
+            existing.isCancelling = false;
+        } else {
+            throw new Error('no such item in cart');
+        }
     }
 
     get totalSum() {

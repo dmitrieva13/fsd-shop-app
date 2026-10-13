@@ -6,7 +6,7 @@ export class RootStore {
   cartStore: CartStore;
 
   constructor() {
-    this.productStore = new ProductStore(this);
+    this.productStore = new ProductStore();
     this.cartStore = new CartStore(this);
   }
 }

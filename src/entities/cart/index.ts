@@ -3,3 +3,4 @@ export { CartItemCard } from "./ui/cart-item-card/cart-item-card";
 export { CartTotalInfo } from "./ui/cart-total-info/cart-total-info";
 export { CartStore } from './model/cart.store'
 export type { CartItem } from './model/types';
+export { DISCOUNT_PERCENT, DISCOUNT_SUM_NEEDED } from './config/constants';

@@ -1,0 +1,56 @@
+.progressBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.sharedProgress {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    -webkit-appearance: none; /* Отключаем дефолтный стиль Chrome/Safari/Edge */
+    appearance: none;
+}
+
+.sharedProgress::-webkit-progress-bar {
+    background-color: var(--bg-color);
+    border-radius: 10px;
+}
+
+.sharedProgress::-webkit-progress-value {
+    border-radius: 10px;
+    background-color: hsl(calc(var(--progress) * 1.2), 55%, 40%);
+    transition: background-color 0.5s ease-in-out, width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sharedProgress::-moz-progress-bar {
+    border-radius: 10px;
+    background-color: hsl(calc(var(--progress) * 1.2), 55%, 40%);
+    transition: background-color 0.5s ease-in-out, width 0.5s cubic-bezier(0.4, 0, 0.2, 1),;
+}
+
+.sharedProgress[data-completed="true"] {
+    animation: animateSuccess 0.6s ease-out forwards;
+}
+
+.sharedProgress[data-completed="true"]::-moz-progress-value {
+    animation: animateSuccess 0.6s ease-out forwards;
+}
+
+@keyframes animateSuccess {
+    0% {
+        transform: scale3d(1, 1, 1);
+        filter: brightness(1);
+    }
+    40% {
+        transform: scale3d(1.05, 1.05, 1.05);
+        filter: brightness(1.6) saturate(1.3);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+        filter: brightness(1) saturate(1);
+    }
+}

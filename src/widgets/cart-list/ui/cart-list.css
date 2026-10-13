@@ -17,6 +17,7 @@
     column-gap: 12px;
     align-items: center;
     justify-content: center;
+    flex-grow: 1;
 }
 
 .buyButtonBlock {
@@ -44,4 +45,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.cartItemCardCancelButton {
+    margin-right: 36px;
 }

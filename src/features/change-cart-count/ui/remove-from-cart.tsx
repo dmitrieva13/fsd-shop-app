@@ -11,7 +11,7 @@ export const RemoveFromCartButton = observer((props: { product: Product }) => {
     return(
         <div className="removeFromCartButton">
             <Trash3 size={24} color='rgba(0,0,0,0.7)' 
-                onClick={() => cartStore.removeFromCart(props.product.id)} />
+                onClick={() => cartStore.handleRemove(props.product.id)} />
         </div>
     )
 });

@@ -1,17 +1,14 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import type { Product } from './types';
 import { apiGet } from  '@/shared/api';
-import type { RootStore } from '@/app/providers/root.store';
 
 export class ProductStore {
     products: Product[] = [];
     isLoading: boolean = false;
     searchStr: string = '';
-    rootStore: RootStore;
 
-    constructor(rootStore: RootStore) {
-        this.rootStore = rootStore;
-        makeAutoObservable(this, { rootStore: false });
+    constructor() {
+        makeAutoObservable(this);
     }
 
     getProduct (id: string) {

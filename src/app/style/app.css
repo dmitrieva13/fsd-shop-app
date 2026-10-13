@@ -11,6 +11,9 @@
     /* --badge-color: rgb(107, 11, 12); */
     --olive-color: #87986A;
     --bg-color: rgb(245, 239, 198);
+
+    --gray-color: #696969;
+    --dark-gray-color: #242424;
 }
   
 *{

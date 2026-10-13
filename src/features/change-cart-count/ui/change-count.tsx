@@ -13,13 +13,13 @@ export const ChangeCount = observer((props: { product: Product }) => {
 
     return(
         <div className="changeCountBlock">
-            <Button className='increaseButton' onClick={() => cartStore.decreaseItem(props.product.id)}>
+            <Button className='decreaseButton' onClick={(e) => cartStore.decreaseItem(props.product.id)}>
                 –
             </Button>
             <div className="changeCount_Count">
                 {item?.count}
             </div>
-            <Button className='decreaseButton' disabled={item?.count !== undefined && item.count >= props.product.countLeft}
+            <Button className='increaseButton' disabled={item?.count !== undefined && item.count >= props.product.countLeft}
                 onClick={() => cartStore.increaseItem(props.product.id)}>
                 +
             </Button>

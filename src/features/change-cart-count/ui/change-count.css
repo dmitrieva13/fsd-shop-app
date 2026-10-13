@@ -6,11 +6,11 @@
     height: 100%;
 }
 
-.increaseButton {
+.decreaseButton {
     border-radius: 12px 0px 0px 12px;
 }
 
-.decreaseButton {
+.increaseButton {
     border-radius: 0px 12px 12px 0px;
 }
 
