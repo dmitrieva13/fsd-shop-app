@@ -1,7 +1,7 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import { apiGet } from  '@/shared/api';
 import type { CartItem } from './types';
-import type { RootStore } from '@/app/providers/root.store';
+import { DISCOUNT_PERCENT, DISCOUNT_SUM_NEEDED } from '../config/constants';
 
 interface ICartDependencies {
     productStore: {
@@ -45,7 +45,7 @@ export class CartStore {
 
     getCartItem(productId: string) {
         const existing = this.items.find(item => item.product.id === productId);
-        return existing || null;
+        return existing;
     }
 
     hasCartItem(productId: string) {
@@ -54,6 +54,11 @@ export class CartStore {
     }
 
     addToCart(productId: string) {
+        if (this.getCartItem(productId)) {
+            this.increaseItem(productId);
+            return;
+        }
+
         const product = this.dependencies.productStore.getProduct(productId);
         if (!product) {
             throw new Error('no product with such id');
@@ -76,8 +81,7 @@ export class CartStore {
 
         if (existing) {
             if (existing.count >= existing.product.countLeft) {
-                return;
-                // throw new Error('max number reached');
+                throw new Error('max number reached');
             }
             existing.count += 1;
         } else {
@@ -148,5 +152,15 @@ export class CartStore {
 
     get isEmpty() {
         return this.items.length === 0;
+    }
+
+    get discount() {
+        const discount = this.totalSum < DISCOUNT_SUM_NEEDED ? 0 : DISCOUNT_PERCENT;
+        return discount;
+    }
+
+    get totalSumDiscount () {
+        const sum = this.totalSum * ((100 - this.discount)/100);
+        return sum;
     }
 }

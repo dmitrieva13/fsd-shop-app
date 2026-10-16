@@ -11,7 +11,7 @@ export function ProgressBar({ value, max, ...props }: {value: number} & {max: nu
     return (
         <div className="progressBlock">
             <progress className='sharedProgress' value={value} max={max} {...props} 
-                data-completed={value >= max}
+                data-completed={value >= max} aria-label='progress-bar'
                 style={{'--progress': getProgressPercent()} as React.CSSProperties} />
         </div>
     );

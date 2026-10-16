@@ -14,7 +14,7 @@ export const CartItemCard = observer((props: {item: CartItem, children?: ReactNo
         <div className="cartItemCard">
             <div className="cartItemCard_Left">
                 <div className="cartItemCard_ImageBlock">
-                    <img src={product.imageUrl || emptyImgUrl} 
+                    <img alt='cart-item-card-img' src={product.imageUrl || emptyImgUrl} 
                         className='cartItemCard_Image' />
                 </div>
                 <div className="cartItemCard_InfoBlock">

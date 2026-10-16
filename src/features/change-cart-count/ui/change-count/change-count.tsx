@@ -9,11 +9,11 @@ import './change-count.css';
 export const ChangeCount = observer((props: { product: Product }) => {
     const { cartStore } = useStores<{ cartStore: CartStore }>();
     // const { countLeft } = props.product;
-    const item = cartStore.items.find(item => item.product.id === props.product.id);
+    const item = cartStore.getCartItem(props.product.id);
 
     return(
         <div className="changeCountBlock">
-            <Button className='decreaseButton' onClick={(e) => cartStore.decreaseItem(props.product.id)}>
+            <Button className='decreaseButton' onClick={() => cartStore.decreaseItem(props.product.id)}>
                 –
             </Button>
             <div className="changeCount_Count">

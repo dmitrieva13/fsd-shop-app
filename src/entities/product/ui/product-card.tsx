@@ -13,7 +13,7 @@ export const ProductCard = observer((props: {product: Product, children?: ReactN
     return(
         <div className="productCard">
             <div className="productCard_ImageBlock">
-                <img src={props.product.imageUrl || emptyImgUrl} 
+                <img alt='product-card-img' src={props.product.imageUrl || emptyImgUrl} 
                     className='productCard_Image' />
             </div>
             <div className="productCard_InfoBlock">

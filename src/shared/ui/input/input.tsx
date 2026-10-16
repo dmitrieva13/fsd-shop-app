@@ -8,7 +8,7 @@ export function Input({ value, onClear, ...props }:
     return (
       <div className="inputBlock">
           <input className='sharedInput' type='text' value={value} {...props} />
-          <XCircleFill className='XCircleIcon' size={16} color='gray' onClick={onClear} />
+          <XCircleFill aria-label='input-clear' className='XCircleIcon' size={16} color='gray' onClick={onClear} />
       </div>
     );
 }

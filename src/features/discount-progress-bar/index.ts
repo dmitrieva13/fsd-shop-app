@@ -1,1 +1,1 @@
-export { DiscountProgressBar } from './ui/discount-progress-bar';
+export { DiscountProgressBar } from './ui/discount-progress-bar/discount-progress-bar';

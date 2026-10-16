@@ -10,7 +10,7 @@ export const CartTotalInfo = observer(() => {
 
     const getCorrectEnding = () => {
         let ending = 'ов';
-        if (totalCount % 10 > 1 && totalCount % 10 < 4 && 
+        if (totalCount % 10 > 1 && totalCount % 10 < 5 && 
             (totalCount < 10 || totalCount > 20)) {
             ending = 'а';
         }
