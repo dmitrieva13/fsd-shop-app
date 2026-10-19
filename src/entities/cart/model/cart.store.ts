@@ -99,7 +99,7 @@ export class CartStore {
 
         if (existing) {
             if (existing.count === 1) {
-                this.removeFromCart(productId);
+                this.handleRemove(productId);
             } else {
                 existing.count -= 1;
             }

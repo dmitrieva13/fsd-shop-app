@@ -9,7 +9,7 @@ const MOCK_DATA: Record<string, any> = {
       { id: '7', name: 'Яйца куринные С1', price: 100, countLeft: 10, imageUrl: '' },
       { id: '8', name: 'Томаты', price: 210, countLeft: 40, imageUrl: 'https://free-png.ru/wp-content/uploads/2022/02/free-png.ru-407.png' },
       { id: '9', name: 'Огурцы', price: 185, countLeft: 25, imageUrl: 'https://pngimg.com/uploads/cucumber/cucumber_PNG12606.png' },
-      { id: '10', name: 'Яйца перепелинные', price: 200, countLeft: 1, imageUrl: 'https://spar-online.ru/upload/iblock/dd1/dd1e958b763c8f49dbf2513be1a56363.png' },
+      { id: '10', name: 'Яйца перепелинные', price: 200, countLeft: 1, imageUrl: 'https://img.pikbest.com/png-images/20250214/quail-eggs-on-a-wooden-surface-transparent-background_11526187.png!f305cw' },
       { id: '11', name: 'Кетчуп томатный', price: 79, countLeft: 9, imageUrl: '' },
       { id: '12', name: 'Молочный коктейль', price: 35, countLeft: 1, imageUrl: '' },
       { id: '13', name: 'Шоколад', price: 120, countLeft: 30, imageUrl: 'https://png.pngtree.com/png-clipart/20240318/original/pngtree-chocolate-bar-png-png-image_14617233.png' },

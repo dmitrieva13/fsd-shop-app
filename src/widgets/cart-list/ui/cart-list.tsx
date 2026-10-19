@@ -15,6 +15,7 @@ export const CartList = observer(() => {
 
     function buyCart() {
         // fetch - make order with cart store items, decrease countLeft in product store
+        cartStore.items = [];
         navigate('/');
     }
 

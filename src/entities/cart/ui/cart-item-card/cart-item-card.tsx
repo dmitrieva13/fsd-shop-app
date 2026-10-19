@@ -18,9 +18,10 @@ export const CartItemCard = observer((props: {item: CartItem, children?: ReactNo
                         className='cartItemCard_Image' />
                 </div>
                 <div className="cartItemCard_InfoBlock">
-                    
                     <div className="cartItemCard_Title">
-                        {product.name}
+                        <div className="cartItemCard_TitleText">
+                            {product.name}
+                        </div>
                     </div>
                     <div className="cartItemCard_Price">
                         {product.price} руб./шт.

@@ -31,6 +31,33 @@
     justify-content: center;
 }
 
+.cartItemCard_Title {
+    min-width: 220px;
+    max-width: 60%;
+    height: 2rem;
+    /* background: white; */
+    position: relative;
+}
+
+.cartItemCard_TitleText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    position: absolute;
+    width: 100%;
+    /* max-width: 100%; */
+}
+
+.cartItemCard_TitleText:hover {
+    white-space: inherit;
+    overflow: visible;
+    background: white;
+    z-index: 10;
+}
+
 .cartItemCard_ActionsBlock {
     display: flex;
     flex-direction: row;

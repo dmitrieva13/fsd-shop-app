@@ -4,6 +4,7 @@
     align-items: stretch;
     justify-content: center;
     height: 100%;
+    max-height: 80px;
 }
 
 .decreaseButton {

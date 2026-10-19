@@ -7,7 +7,7 @@ import { jest } from '@jest/globals';
 describe('testing /shared/ui/input', () => {
 
     test('should have correct value on render', () => {
-        render(<Input value={'10'} />);
+        render(<Input defaultValue={'10'} />);
         const input = screen.getByRole('textbox');
         expect(input).toBeInTheDocument();
         expect(input).toHaveValue('10');

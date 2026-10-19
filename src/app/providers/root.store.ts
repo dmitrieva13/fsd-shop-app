@@ -2,13 +2,13 @@ import { ProductStore } from '@/entities/product';
 import { CartStore } from '@/entities/cart';
 
 export class RootStore {
-  productStore: ProductStore;
-  cartStore: CartStore;
+    productStore: ProductStore;
+    cartStore: CartStore;
 
-  constructor() {
-    this.productStore = new ProductStore();
-    this.cartStore = new CartStore(this);
-  }
+    constructor() {
+      this.productStore = new ProductStore();
+      this.cartStore = new CartStore(this);
+    }
 }
 
 export const rootStore = new RootStore();

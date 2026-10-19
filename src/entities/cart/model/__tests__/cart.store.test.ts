@@ -72,8 +72,16 @@ describe('testing /entities/cart/model/cart.store', () => {
         store.decreaseItem('2');
         expect(store.items.length).toBe(1);
         expect(store.items[0].count).toBe(1);
+    });
+
+    test('should descrease item with count 1 (remove) with 3s delay', () => {
+        store.addToCart('2');
 
         store.decreaseItem('2');
+        jest.advanceTimersByTime(2999);
+        expect(store.items.length).toBe(1);
+        expect(store.items[0].count).toBe(1);
+        jest.advanceTimersByTime(1);
         expect(store.items.length).toBe(0);
     });
 

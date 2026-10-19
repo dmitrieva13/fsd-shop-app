@@ -56,6 +56,9 @@
     text-overflow: ellipsis;
     position: absolute;
     width: 100%;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .productCard_TitleText:hover {
@@ -63,4 +66,8 @@
     overflow: visible;
     background: white;
     z-index: 10;
+}
+
+.productCard_ActionsBlock {
+    height: 40px;
 }

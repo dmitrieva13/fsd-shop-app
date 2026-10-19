@@ -5,6 +5,19 @@
     border-radius: 12px;
     cursor: pointer;
     border: none;
+    max-width: 100%;
+    min-width: 20px;
+    min-height: 18px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    margin: auto;
+
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
 }
 
 .sharedBtn:hover {

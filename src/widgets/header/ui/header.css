@@ -34,3 +34,10 @@
     background-color: var(--primary-color);
     color: var(--bg-color);
 }
+
+.activeHeaderItem:hover {
+    cursor: default;
+    user-select: none;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
