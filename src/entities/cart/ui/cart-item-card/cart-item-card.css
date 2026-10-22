@@ -29,13 +29,14 @@
     flex-direction: column;
     column-gap: 10px;
     justify-content: center;
+    flex-grow: 10;
+    width: 100%;
 }
 
 .cartItemCard_Title {
-    min-width: 220px;
-    max-width: 60%;
     height: 2rem;
-    /* background: white; */
+    width: 60%;
+    max-width: 60%;
     position: relative;
 }
 
@@ -47,8 +48,9 @@
     overflow-wrap: break-word;
     word-wrap: break-word;
     position: absolute;
-    width: 100%;
-    /* max-width: 100%; */
+    width: fit-content;
+    /* min-width: 220px; */
+    max-width: 100%;
 }
 
 .cartItemCard_TitleText:hover {
@@ -68,6 +70,7 @@
     flex-direction: row;
     column-gap: 10px;
     align-items: center;
+    flex-grow: 1;
 }
 
 .cartItemCard_Right {
