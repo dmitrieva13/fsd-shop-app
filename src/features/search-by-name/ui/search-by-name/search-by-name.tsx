@@ -21,7 +21,7 @@ export const SearchByName = observer(() => {
 
     const debouncedSearch = useMemo(() => debounce(search, 500),
         [productStore]
-      );
+    );
 
     function handleChange(context: any, searchStr: string) {
         setValue(searchStr);

@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite';
 import { useEffect } from 'react';
 
 import { useStores } from '@/shared/lib';
-import type { ProductStore, Product } from '@/entities/product';
+import type { ProductStore } from '@/entities/product';
 import type { CartStore } from '@/entities/cart';
 import { ProductCard } from '@/entities/product';
 import { ChangeCount, AddToCartButton } from '@/features/change-cart-count'
@@ -41,10 +41,10 @@ export const ProductGrid = observer(() => {
             </div>
             }
             { products.length > 0 && 
-            products.map((product, index) => {
+            products.map((product) => {
                 const hasItem = cartStore.hasCartItem(product.id);
                 return(
-                    <ProductCard product={product} key={'productCard_'+index}>
+                    <ProductCard product={product} key={'productCard_'+product.id}>
                         <div className="productCardChildren">
                             {hasItem &&
                             <ChangeCount product={product} />
